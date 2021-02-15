@@ -1,0 +1,17 @@
+.expose-button {
+  color: whitesmoke;
+  background: #282c34;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border: 5px solid #226fa2;
+  border-radius: 10px;
+  outline: 0;
+
+  &:hover {
+    border-color: #34a9ff;
+  }
+
+  &:active {
+    border-color: #466fa2;
+  }
+}
