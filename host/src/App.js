@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation';
 import localRoutes from './routes';
@@ -9,7 +9,7 @@ const routes = [...localRoutes, ...remoteRoutes];
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <div className='App'>
         <Navigation />
         <React.Suspense fallback={<div className='App-section'>Loading...</div>}>
@@ -27,7 +27,7 @@ function App() {
           </Switch>
         </React.Suspense>
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 

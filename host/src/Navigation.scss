@@ -20,20 +20,13 @@
 
 .App-navigation__list a {
   text-decoration: none;
-  color: #61dafb;
+  color: #007394;
 
-  &:visited {
+  &:link, &:visited {
     color: #007394;
   }
 
-
-  &:hover {
+  &:hover, &.active {
     color: #7ddefc;
   }
-
-  &.active {
-    color: #61dafb;
-  }
-
-
 }

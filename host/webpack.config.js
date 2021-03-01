@@ -15,6 +15,7 @@ module.exports = {
     port: 9001,
     publicPath: '/',
     contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true,
     watchContentBase: true,
     disableHostCheck: true,
     liveReload: true,
