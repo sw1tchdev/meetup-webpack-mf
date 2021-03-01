@@ -12,7 +12,7 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   devServer: {
     host: '0.0.0.0',
-    port: 9001,
+    port: 9003,
     publicPath: '/',
     contentBase: path.join(__dirname, 'dist'),
     watchContentBase: true,
@@ -87,14 +87,13 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'host',
+      name: 'host2',
       filename: "remoteEntry.js",
       remotes: {
-        host2: "host2@//localhost:9003/remoteEntry.js",
+        host: "host@//localhost:9001/remoteEntry.js",
         remote: "remote@//localhost:9002/remoteEntry.js",
       },
       exposes: {
-        "./Navigation": "./src/Navigation",
         "./routes": "./src/routes",
       },
       shared: {

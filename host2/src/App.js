@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navigation from './Navigation';
-import localRoutes from './routes';
-import remoteRoutes from 'host2/routes';
+import Navigation from 'host/Navigation';
+import localRoutes from "./routes";
+import remoteRoutes from "host/routes";
 
 const routes = [...localRoutes, ...remoteRoutes];
 
