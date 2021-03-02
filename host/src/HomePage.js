@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import ErrorBoundary from './ErrorBoundary';
-
 import './App.css';
 
 const RemoteButton = React.lazy(() => import('remote/Button'));
 
+// saving in variable scope just for example; dont do that
+let counter = 0;
+
 const HomePage = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(counter);
+
+  useEffect(() => () => {
+    counter = count;
+  }, [count]);
 
   return (<section className='App-section'>
     <img src={logo} className='App-logo' alt='logo' />
