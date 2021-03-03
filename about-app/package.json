@@ -1,14 +1,14 @@
 {
-  "name": "host-webpack-mf",
+  "name": "about-webpack-mf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "sw1tchdev",
   "license": "MIT",
   "scripts": {
-    "start:host": "webpack serve --node-env=development",
-    "build:local": "webpack --node-env=development",
-    "build:production": "webpack --node-env=production",
+    "start:about": "webpack serve --node-env=development",
+    "build:about:local": "webpack --node-env=development",
+    "build:about:production": "webpack --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

@@ -12,10 +12,9 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   devServer: {
     host: '0.0.0.0',
-    port: 9003,
+    port: 9002,
     publicPath: '/',
     contentBase: path.join(__dirname, 'dist'),
-    historyApiFallback: true,
     watchContentBase: true,
     disableHostCheck: true,
     liveReload: true,
@@ -88,14 +87,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'host2',
-      filename: "remoteEntry.js",
-      remotes: {
-        host: "host@//localhost:9001/remoteEntry.js",
-        remote: "remote@//localhost:9002/remoteEntry.js",
-      },
+      name: 'button',
+      filename: 'remoteEntry.js',
       exposes: {
-        "./routes": "./src/routes",
+        './Button': './src/expose/Button',
       },
       shared: {
         react: {
@@ -106,10 +101,6 @@ module.exports = {
           requiredVersion: '^17.0.1',
           singleton: true,
         },
-        'react-router-dom': {
-          requiredVersion: '^5.2.0',
-          singleton: true,
-        }
       },
     }),
     new HTMLWebpackPlugin({

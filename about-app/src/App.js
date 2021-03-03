@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navigation from './Navigation';
+import Navigation from 'home/Navigation';
 import localRoutes from './routes';
-import remoteRoutes from 'host2/routes';
+import remoteRoutes from 'home/routes';
 
 const routes = [...localRoutes, ...remoteRoutes];
 

@@ -1,20 +1,21 @@
 {
-  "name": "remote-webpack-mf",
+  "name": "home-webpack-mf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "sw1tchdev",
   "license": "MIT",
   "scripts": {
-    "start:remote": "webpack serve --node-env=development",
-    "build:local": "webpack --node-env=development",
-    "build:production": "webpack --node-env=production",
+    "start:home": "webpack serve --node-env=development",
+    "build:home:local": "webpack --node-env=development",
+    "build:home:production": "webpack --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@babel/runtime": "7.12.13",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.16",

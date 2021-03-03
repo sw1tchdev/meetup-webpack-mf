@@ -3,14 +3,13 @@ import logo from './logo.svg';
 import ErrorBoundary from './ErrorBoundary';
 import './App.css';
 
-const RemoteButton = React.lazy(() => import('remote/Button'));
+const RemoteButton = React.lazy(() => import('button/Button'));
 
 // saving in variable scope just for example; dont do that
 let counter = 0;
 
-const HomePage = () => {
+const AboutPage = () => {
   const [count, setCount] = useState(counter);
-
   useEffect(() => () => {
     counter = count;
   }, [count]);
@@ -18,16 +17,8 @@ const HomePage = () => {
   return (<section className='App-section'>
     <img src={logo} className='App-logo' alt='logo' />
     <p>
-      This is Host
+      This is AboutPage from Host2
     </p>
-    <a
-      className='App-link'
-      href='//localhost:9002'
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      Go to Remote Button
-    </a>
     <ErrorBoundary defaultError='Remote is not available'>
       <React.Suspense fallback='Loading Button'>
         <RemoteButton onClick={() => setCount(count + 1)}>
@@ -41,4 +32,4 @@ const HomePage = () => {
   </section>);
 };
 
-export default HomePage;
+export default AboutPage;
