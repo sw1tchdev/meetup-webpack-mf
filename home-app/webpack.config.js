@@ -1,6 +1,5 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -13,18 +12,26 @@ module.exports = {
   devServer: {
     host: '0.0.0.0',
     port: 9001,
-    publicPath: '/',
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      publicPath: '/',
+    },
+    allowedHosts: 'all',
     historyApiFallback: true,
-    watchContentBase: true,
-    disableHostCheck: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    },
+    hot: false,
     liveReload: true,
-    injectClient: true,
+    client: true,
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'auto',
+    clean: true,
   },
   resolve: {
     extensions: ['.js', '.json'],
@@ -123,6 +130,5 @@ module.exports = {
         collapseWhitespace: false,
       },
     }),
-    new CleanWebpackPlugin(),
   ],
 };
