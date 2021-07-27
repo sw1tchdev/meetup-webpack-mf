@@ -31,6 +31,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'auto',
+    clean: true,
   },
   resolve: {
     extensions: ['.js', '.json'],
