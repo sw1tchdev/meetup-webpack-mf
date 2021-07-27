@@ -13,7 +13,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 9002,
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'public'),
       publicPath: '/',
     },
     allowedHosts: 'all',
